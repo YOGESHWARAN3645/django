@@ -1,0 +1,30 @@
+{% load static %}
+<html> 
+    <head> 
+        <title>employee</title> 
+        <link rel="stylesheet" href="{% static 'css/Employee.css' %}">
+
+
+    <body> 
+        <h1> The employees list is : </h1> 
+        {% if employee_list %} 
+        <table> 
+            <thead> 
+                <th>Name </th> 
+                <th>Employee_ID </th> 
+                <th>Employee Salary</th> 
+            </thead> 
+            {% for emp in employee_list %} 
+        
+            <tr> 
+                <td>{{emp.name}}</td> 
+                <td>{{emp.employee_Id}}</td> 
+                <td>{{emp.employee_salary}}</td> 
+            </tr> 
+            {% endfor %} 
+        </table> 
+        {%else%} 
+            <p> No records found </p> 
+        {% endif %} 
+    </body> 
+</html> 
